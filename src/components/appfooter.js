@@ -8,7 +8,7 @@ const FooterWrapper = (contents) =>
   </Footer>
 
 const FooterOuterBox = (innerbox) =>
-  <Box align="center" alignContent="around" direction="column" full="horizontal" pad="medium"  colorIndex="light-2" >
+  <Box align="center" alignContent="around" direction="column" full="horizontal" pad="medium"  colorIndex="grey-1" >
     {innerbox}
   </Box>
 

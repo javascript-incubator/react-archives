@@ -9,7 +9,7 @@ const SeasonLinksArray  = [1,2,3,4,5,6];
 
 const HeaderTitle = () =>
   <Title pad="medium">
-    Watch the Thrones
+    <Anchor path={`/`} label="Watch the Thrones" />
   </Title>
 
 const SeasonLinksBox = (seasonlinks)=>
@@ -20,7 +20,7 @@ const SeasonLinksBox = (seasonlinks)=>
 
 const SeasonLinks = (seasonArray) =>
   <Menu label="Label" inline={true} direction="row">
-    {seasonArray.map((x,i)=><Anchor href="#" key={i}>Season {x}</Anchor>)}
+    {seasonArray.map((x,i)=><Anchor path={`/season/${i}`} key={i}>Season {x}</Anchor>)}
   </Menu>
 
 const HeaderContainer = (title,linksbox) =>

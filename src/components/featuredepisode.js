@@ -16,7 +16,7 @@ const FeaturedDetailsCard = (title) =>
     label="Now Showing"
     size="large"
     link={
-      <Anchor href="#" primary={true} label="Watch Now" />
+      <Anchor path={`watch`} primary={true} label="Watch Now" />
     }/>
 
 //justification required

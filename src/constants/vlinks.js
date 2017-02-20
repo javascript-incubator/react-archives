@@ -1,0 +1,2 @@
+var vlink = 'https://redirector.googlevideo.com/videoplayback?id=662c807c887b4cdd&itag=22&source=webdrive&requiressl=yes&ttl=transient&mm=30&mn=sn-5hnednlz&ms=nxu&mv=m&pl=36&mime=video/mp4&lmt=1487476555333162&mt=1487617657&ip=2a00:1768:2001:2::1f&ipbits=128&expire=1487632143&sparams=ip%2Cipbits%2Cexpire%2Cid%2Citag%2Csource%2Crequiressl%2Cttl%2Cmm%2Cmn%2Cms%2Cmv%2Cpl%2Cmime%2Clmt&signature=87859E55CCF621FBC4C0D3C260AC7D6BE0035898.ADFA572BE4E65DA33395EBC115DCC98513381B28&key=ck2&app=explorer&xmi=237';
+export default vlink;
