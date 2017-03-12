@@ -48,6 +48,6 @@ Main mounting of Application.
 * GIPHY API
 * Fixer.io API
 
-[![CATGIFs](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](reactor.rajatsharma.rocks/gifs)
+[![CATGIFs](http://forthebadge.com/images/badges/contains-cat-gifs.svg)](http://reactor.rajatsharma.rocks/)
 
-[![WITHLOVE](http://forthebadge.com/images/badges/built-with-love.svg)](reactor.rajatsharma.rocks)
+[![WITHLOVE](http://forthebadge.com/images/badges/built-with-love.svg)](http://reactor.rajatsharma.rocks/)
