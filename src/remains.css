@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body {
+  background: #E1FAF9;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.CodeMirror {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}

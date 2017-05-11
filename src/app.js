@@ -6,6 +6,7 @@ import Editor from './components/codemirror'
 import Info from './components/info'
 import { APIroute } from './config'
 import request from 'superagent'
+import Notification from './components/notifiction'
 
 class App extends PureComponent {
 
@@ -72,7 +73,7 @@ class App extends PureComponent {
           return;
         }
         fakeThis.setState({ loading: false })
-        fakeThis.setNotification('Whatever you did, It was success', false);
+        fakeThis.setNotification('Successfully Fetched', false);
         fakeThis.onJsonChange(JSON.stringify(res.body, null, '\t'))
       })
   }
@@ -101,14 +102,10 @@ class App extends PureComponent {
             getJson={() => this.getJson()}
             postJson={() => this.postJson()}
             loading={this.state.loading}
-            routeError={this.state.routeError}
-            notify={this.state.notify}
-            notificationMessage={this.state.notificationMessage}
-            removeNotification={() => this.removeNotification()}
-            failure={this.state.failure}
           />
           <Editor value={this.state.json} changeEmitter={json => this.onJsonChange(json)} />
         </AppBody>
+        {this.state.notify && <Notification danger={this.state.failure} notificationMessage={this.state.notificationMessage} removeNotification={() => this.removeNotification()}/>}
       </AppContainer>
     )
   }

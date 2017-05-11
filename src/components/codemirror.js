@@ -1,11 +1,11 @@
 import React from 'react';
-import CodeMirror from 'react-codemirror'
+import ReactCoder from 'react-coder'
 import styled from 'styled-components'
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/mode/javascript/javascript'
 import 'codemirror/theme/icecoder.css'
 
-export const StyledCode = styled(CodeMirror)`
+export const StyledCode = styled(ReactCoder)`
   width: 50%;
   margin: 0;
   font-size: 14px;
