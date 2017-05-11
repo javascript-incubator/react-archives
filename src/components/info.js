@@ -34,8 +34,8 @@ const AppInfo = ({
     <Heading>Serve your Fake JSON API @</Heading>
     <RouteInput value={value} changeEmitter={text => changeEmitter(text)} api={api}/>
     {!loading && <Buttons>
-      <GetButton text="Get" onClick={() => getJson()}/>
-      <GetButton text="Post" onClick={() => postJson()}/>
+      <GetButton text="Get" onClick={() => getJson()} id="Get"/>
+      <GetButton text="Post" onClick={() => postJson()} id="Post"/>
     </Buttons>}
     {loading && <Pulse size={70} color="#0AD3FF"/>}
     <Credits/>

@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 
 
-const slideInUp = keyframes `
+const slideInUp = keyframes`
   from {
     transform: translate3d(0, 100%, 0);
     visibility: visible;

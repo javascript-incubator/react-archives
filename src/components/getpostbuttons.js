@@ -31,7 +31,7 @@ const QuidelButtons = styled.button`
 
 const GetButton = props =>
   <div className="box">
-    <QuidelButtons onClick={() => props.onClick()}>
+    <QuidelButtons onClick={() => props.onClick()} id={props.id}>
       <span>{props.text}</span>
     </QuidelButtons>
   </div>

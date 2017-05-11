@@ -5,5 +5,6 @@ export default {
   routeError:false,
   notify:false,
   failure:false,
-  notificationMessage:''
+  notificationMessage:'',
+  tour:false
 }

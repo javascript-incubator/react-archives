@@ -24,6 +24,6 @@ const Options = {
 };
 
 const Editor = ({ value, changeEmitter }) =>
-  <StyledCode value={value} onChange={(e) => changeEmitter(e)} options={Options}/>
+  <StyledCode value={value} onChange={(e) => changeEmitter(e)} options={Options} id="Code"/>
 
 export default Editor;

@@ -58,11 +58,11 @@ const RouteInput = props =>
   <RelativeSpan>
     <BorderInput
       type="text"
-      id="input-13"
+      id="Route"
       value={props.value}
       onChange={(e) =>props.changeEmitter(e.target.value)}
     />
-    <GreyedLabel onClick={() => window.open(`${props.api}${props.value}`)}>{`${props.api}${props.value}`}</GreyedLabel>
+    <GreyedLabel id="Url" onClick={() => window.open(`${props.api}${props.value}`)}>{`${props.api}${props.value}`}</GreyedLabel>
   </RelativeSpan>
 
 export default RouteInput

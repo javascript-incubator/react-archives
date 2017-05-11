@@ -29,7 +29,7 @@ class App extends PureComponent {
   }
 
   onRouteChange(newRoute) {
-    this.setState({ route: newRoute })
+    this.setState({ route: newRoute.toLowerCase() })
   }
 
   onJsonChange(newJson) {
