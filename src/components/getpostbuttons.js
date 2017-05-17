@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const QuidelButtons = styled.button`
   background-color: #fff;
-	color: #C3979F;
+	color: #FF8552;
 	overflow: hidden;
   transition: box-shadow 0.5s ease-in-out;
   float: left;
@@ -20,12 +20,12 @@ const QuidelButtons = styled.button`
 	-moz-osx-font-smoothing: grayscale;
 
   &:hover{
-    box-shadow: 0px 0px 0px 2px #C3979F;
+    box-shadow: 0px 0px 0px 2px #FF8552;
   }
 
   &:focus{
     outline: none;
-    box-shadow: 0px 0px 0px 2px #C3979F;
+    box-shadow: 0px 0px 0px 2px #FF8552;
   }
 `
 

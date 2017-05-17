@@ -14,7 +14,7 @@ const slideInUp = keyframes`
 `;
 
 const NotificationWrapper = styled.div `
-  background-color: ${props => props.danger ? '#C3979F':'#78FFD6' }
+  background-color: ${props => props.danger ? '#FF8552':'#85FFC7' }
   color: black;
   padding: 20px;
   position: absolute;

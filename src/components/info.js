@@ -37,7 +37,7 @@ const AppInfo = ({
       <GetButton text="Get" onClick={() => getJson()} id="Get"/>
       <GetButton text="Post" onClick={() => postJson()} id="Post"/>
     </Buttons>}
-    {loading && <Pulse size={70} color="#0AD3FF"/>}
+    {loading && <Pulse size={70} color="#297373"/>}
     <Credits/>
   </StyledInfo>
 

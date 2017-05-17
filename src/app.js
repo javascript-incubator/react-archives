@@ -4,7 +4,7 @@ import { AppContainer, AppBody } from './components/styled'
 import Header from './components/header'
 import Editor from './components/codemirror'
 import Info from './components/info'
-import { APIroute } from './config'
+import { APIroute, Colors } from './config'
 import request from 'superagent'
 import Notification from './components/notifiction'
 
@@ -93,9 +93,9 @@ class App extends PureComponent {
   render() {
     return(
       <AppContainer>
-        <Header />
+        <Header colors={Colors}/>
         <AppBody>
-          <Info
+          <Info colors={Colors}
             value={this.state.route}
             changeEmitter={text => this.onRouteChange(text)}
             api={APIroute}
@@ -105,7 +105,7 @@ class App extends PureComponent {
           />
           <Editor value={this.state.json} changeEmitter={json => this.onJsonChange(json)} />
         </AppBody>
-        {this.state.notify && <Notification danger={this.state.failure} notificationMessage={this.state.notificationMessage} removeNotification={() => this.removeNotification()}/>}
+        {this.state.notify && <Notification colors={Colors} danger={this.state.failure} notificationMessage={this.state.notificationMessage} removeNotification={() => this.removeNotification()}/>}
       </AppContainer>
     )
   }

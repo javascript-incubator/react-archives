@@ -32,12 +32,12 @@ const BorderInput = styled.input`
   -webkit-appearance: none;
   width: 100%;
   box-shadow: 0px 0px 0px 2px transparent;
-  color: #C3979F;
+  color: #FF8552;
   -webkit-transition: box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
 
   &:focus{
-    box-shadow: 0px 0px 0px 2px #C3979F;
+    box-shadow: 0px 0px 0px 2px #FF8552;
     outline: none;
   }
 `
