@@ -17,4 +17,4 @@ View your served JSON by clicking on `GET` 🤘
 
 Faker makes it easy to implement API mocks, but is, for now, limited to `GET` and `POST` requests only.🙂
 
-<http://faker.rajatsharma.rocks>
+<http://faker.generaljs.org>
