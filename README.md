@@ -25,4 +25,4 @@ Public Portal to Library of Images gathered at NASA's Curiosity Mars Mission
 * Add Tour
 * Add Pages
 
-[Keep Visiting](http://curiosity.rajatsharma.rocks)
+[Keep Visiting](http://curiosity.generaljs.org/)
