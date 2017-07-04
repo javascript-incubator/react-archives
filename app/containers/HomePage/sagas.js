@@ -10,11 +10,9 @@ import request from 'utils/request';
 import { delay } from 'redux-saga';
 import { cameraSelector, pageSelector, solSelector } from 'containers/HomePage/selectors'; //eslint-disable-line
 import { manifestTransformer } from '../App/transformers';
-import { CHANGE_SOL, CHANGE_CAMERA } from './constants';
+import { CHANGE_SOL, CHANGE_CAMERA, APIKEY, DEMOKEY } from './constants'; //eslint-disable-line
 
-/**
- * Github repos request/response handler
- */
+
 export function* getImages() {
   // Select username from store
   const camera = yield select(cameraSelector());
@@ -22,9 +20,9 @@ export function* getImages() {
   const sol = yield select(solSelector());
   let requestURL = '';
   if (camera === 'ALL CAMS') {
-    requestURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&page=${page}&api_key=zoRMstTUapz7r991Ob6ZxjU1VFE7rZSzsJaiohw7`;
+    requestURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&page=${page}&api_key=${DEMOKEY}`;
   } else {
-    requestURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&camera=${camera}&page=${page}&api_key=zoRMstTUapz7r991Ob6ZxjU1VFE7rZSzsJaiohw7`;
+    requestURL = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&camera=${camera}&page=${page}&api_key=${DEMOKEY}`;
   }
 
   try {
@@ -38,7 +36,7 @@ export function* getImages() {
 
 export function* getMissionManifest() {
   // Select username from store
-  const requestURL = 'https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=zoRMstTUapz7r991Ob6ZxjU1VFE7rZSzsJaiohw7';
+  const requestURL = `https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=${DEMOKEY}`;
 
   try {
     // Call our request helper (see 'utils/request')
