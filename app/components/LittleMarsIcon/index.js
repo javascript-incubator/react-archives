@@ -6,5 +6,6 @@ const LittleIcon = styled.img`
   height:1em;
   width:1em;
   margin: 5px;
-`
-export default () => <LittleIcon src={MarsIcon} />
+`;
+
+export default () => <LittleIcon src={MarsIcon} />;

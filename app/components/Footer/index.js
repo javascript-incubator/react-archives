@@ -1,9 +1,9 @@
 import React from 'react';
 import Footer from 'grommet/components/Footer';
 import Box from 'grommet/components/Box';
+import Heading from 'grommet/components/Heading';
 import Paragraph from 'grommet/components/Paragraph';
 import LittleNasaIcon from './nasacredits';
-import Heading from 'grommet/components/Heading';
 
 function AppFooter() {
   return (

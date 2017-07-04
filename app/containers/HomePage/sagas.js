@@ -5,12 +5,11 @@
 import { take, call, put, select, cancel, takeLatest } from 'redux-saga/effects'; //eslint-disable-line
 import { LOCATION_CHANGE } from 'react-router-redux';
 import { LOAD_IMAGES, LOAD_MANIFEST } from 'containers/App/constants';
-import { imageLoadingSuccess, imageLoadingError, manifestLoadingSuccess, manifestLoadingError } from 'containers/App/actions';
+import { imageLoadingSuccess, imageLoadingError, manifestLoadingSuccess, manifestLoadingError, loadImages } from 'containers/App/actions';
 import request from 'utils/request';
 import { delay } from 'redux-saga';
 import { cameraSelector, pageSelector, solSelector } from 'containers/HomePage/selectors'; //eslint-disable-line
 import { manifestTransformer } from '../App/transformers';
-import { loadImages } from '../App/actions';
 import { CHANGE_SOL, CHANGE_CAMERA } from './constants';
 
 /**
@@ -53,12 +52,12 @@ export function* getMissionManifest() {
 export function* changeSol(action) {
   if (action.payload) {
     yield call(delay, 1000);
-    yield put(loadImages())
+    yield put(loadImages());
   }
 }
 
-export function* changeCamera(action) {
-  yield put(loadImages())
+export function* changeCamera() {
+  yield put(loadImages());
 }
 
 /**

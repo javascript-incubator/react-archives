@@ -4,5 +4,6 @@ import NASAIcon from './assets/logo.png';
 
 const LittleIcon = styled.img`
   width:2em;
-`
-export default () => <LittleIcon src={NASAIcon} />
+`;
+
+export default () => <LittleIcon src={NASAIcon} />;

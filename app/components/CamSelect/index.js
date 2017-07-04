@@ -6,7 +6,7 @@ const CSLabel = styled.div`
   line-height: 1;
   vertical-align: baseline;
   margin: 0em 0.14285714em;
-  background-color: ${props => props.color || `#E8E8E8`};
+  background-color: ${(props) => props.color || '#E8E8E8'};
   background-image: none;
   padding: 0.5833em 0.833em;
   color: #fff;
@@ -17,7 +17,8 @@ const CSLabel = styled.div`
   border-radius: 0.28571429rem;
   -webkit-transition: background 0.1s ease;
   transition: background 0.1s ease;
-`
+`;
+
 const PaddedLabel = styled(CSLabel)`
   margin: 2px !important;
 `;
@@ -46,7 +47,6 @@ class BadgeSelect extends Component {
             {y}
           </PaddedLabel>
         )}
-        <br/>
       </div>
     );
   }
