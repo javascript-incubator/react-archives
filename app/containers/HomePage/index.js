@@ -5,10 +5,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import Box from 'grommet/components/Box';
 import Columns from 'grommet/components/Columns';
-import Spinning from 'grommet/components/icons/Spinning';
+import Heading from 'grommet/components/Heading';
 import Card from 'grommet/components/Card';
 import Value from 'grommet/components/Value';
-import Globe from 'grommet/components/icons/base/Globe';
+import { ChasingDots } from 'better-react-spinkit';
 import { ResponsiveContainer, LineChart, Line, Tooltip } from 'recharts';
 import CamSelect from '../../components/CamSelect';
 import { imagesSelector, loadingImagesSelector, loadImageErrorSelector, loadImageSuccessSelector, globalGenericSelector } from '../App/selectors';
@@ -16,6 +16,7 @@ import { cameraSelector, pageSelector, solSelector } from './selectors';
 import { loadImages, loadMissionManifest } from '../App/actions';
 import { dispatchHomeUiAction } from './actions';
 import { CHANGE_CAMERA, CHANGE_SOL, CHANGE_PAGE } from './constants';
+import LittleMarsIcon from '../../components/LittleMarsIcon';
 
 const Cameras = [
   'ALL CAMS',
@@ -48,9 +49,14 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
           <Value
             align="end"
             value={sol}
-            icon={<Globe />}
-            label="Sol"
+            icon={<LittleMarsIcon />}
+            label="Martian Sol"
           />
+          {manifestLoading &&
+            <Box pad="medium" justify="center" alignSelf="center" align="center">
+              <ChasingDots size={70} color="#297373" />
+              <Heading>Loading Manifest</Heading>
+            </Box>}
           {!manifestLoading && !!missionManifest.length && <ResponsiveContainer width="100%" height={200}>
             <LineChart data={missionManifest} onClick={(d) => selectSol(d.activeTooltipIndex)}>
               <Tooltip itemStyle={{ color: '#000000' }} labelStyle={{ color: '#000000' }} wrapperStyle={{ color: '#000000' }} />
@@ -62,8 +68,13 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
           <CamSelect badges={Cameras} onSelect={(y) => this.props.selectCamera(y)} selected={camera} />
         </Box>
         {imageLoading &&
-          <Box pad="medium" justify="center" alignSelf="center">
-            <Spinning size="large" />
+          <Box pad="medium" justify="center" alignSelf="center" full align="center">
+            <ChasingDots size={70} color="#297373" />
+            <Heading tag="h2">Loading Images</Heading>
+          </Box>}
+        {!images.length &&
+          <Box pad="medium" justify="center" alignSelf="center" full align="center">
+            <Heading>☹️ No Images Found try different Search</Heading>
           </Box>}
         {!imageLoading && !imageError && !!images.length &&
           <Columns

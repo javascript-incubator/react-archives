@@ -1,8 +1,24 @@
-import { Label } from 'semantic-ui-react';
 import React, { PureComponent, Component, PropTypes } from 'react'; //eslint-disable-line
 import styled from 'styled-components';
 
-const PaddedLabel = styled(Label)`
+const CSLabel = styled.div`
+  display: inline-block;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 0em 0.14285714em;
+  background-color: ${props => props.color || `#E8E8E8`};
+  background-image: none;
+  padding: 0.5833em 0.833em;
+  color: #fff;
+  text-transform: none;
+  font-weight: bold;
+  font-size: 0.85714286rem;
+  border: 0px solid transparent;
+  border-radius: 0.28571429rem;
+  -webkit-transition: background 0.1s ease;
+  transition: background 0.1s ease;
+`
+const PaddedLabel = styled(CSLabel)`
   margin: 2px !important;
 `;
 
@@ -19,7 +35,6 @@ class BadgeSelect extends Component {
   }
 
   selectBadge(k) {
-    // this.setState({ selectedBadge: k });
     this.props.onSelect(k);
   }
 
@@ -27,10 +42,11 @@ class BadgeSelect extends Component {
     return (
       <div>
         {this.props.badges.map((y, j) =>
-          <PaddedLabel key={j} onClick={() => this.selectBadge(y)} color={this.props.selected === y ? 'blue' : 'grey'}>
+          <PaddedLabel key={j} onClick={() => this.selectBadge(y)} color={this.props.selected === y ? '#2185D0' : 'grey'}>
             {y}
           </PaddedLabel>
         )}
+        <br/>
       </div>
     );
   }

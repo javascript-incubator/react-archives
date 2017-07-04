@@ -7,8 +7,11 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 import { LOAD_IMAGES, LOAD_MANIFEST } from 'containers/App/constants';
 import { imageLoadingSuccess, imageLoadingError, manifestLoadingSuccess, manifestLoadingError } from 'containers/App/actions';
 import request from 'utils/request';
+import { delay } from 'redux-saga';
 import { cameraSelector, pageSelector, solSelector } from 'containers/HomePage/selectors'; //eslint-disable-line
 import { manifestTransformer } from '../App/transformers';
+import { loadImages } from '../App/actions';
+import { CHANGE_SOL, CHANGE_CAMERA } from './constants';
 
 /**
  * Github repos request/response handler
@@ -47,15 +50,30 @@ export function* getMissionManifest() {
   }
 }
 
+export function* changeSol(action) {
+  if (action.payload) {
+    yield call(delay, 1000);
+    yield put(loadImages())
+  }
+}
+
+export function* changeCamera(action) {
+  yield put(loadImages())
+}
+
 /**
  * Root saga manages watcher lifecycle
  */
 export function* mrData() {
   const watcher = yield takeLatest(LOAD_IMAGES, getImages);
   const manifestCallWatcher = yield takeLatest(LOAD_MANIFEST, getMissionManifest);
+  const changeSolWatcher = yield takeLatest(CHANGE_SOL, changeSol);
+  const changeCameraWatcher = yield takeLatest(CHANGE_CAMERA, changeCamera);
   // Suspend execution until location changes
   yield take(LOCATION_CHANGE);
   yield cancel(watcher);
+  yield cancel(changeSolWatcher);
+  yield cancel(changeCameraWatcher);
   yield cancel(manifestCallWatcher);
 }
 

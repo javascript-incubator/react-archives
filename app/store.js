@@ -5,13 +5,9 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
-import { createEpicMiddleware } from 'redux-observable';
 import createSagaMiddleware from 'redux-saga';
 import createReducer from './reducers';
-import createRootEpic from './epics';
-
 const sagaMiddleware = createSagaMiddleware();
-const epicMiddleware = createEpicMiddleware(createRootEpic());
 
 export default function configureStore(initialState = {}, history) {
   // Create the store with two middlewares
@@ -19,7 +15,6 @@ export default function configureStore(initialState = {}, history) {
   // 2. routerMiddleware: Syncs the location/URL path to the state
   const middlewares = [
     sagaMiddleware,
-    epicMiddleware,
     routerMiddleware(history),
   ];
 
@@ -45,7 +40,6 @@ export default function configureStore(initialState = {}, history) {
   // Extensions
   store.runSaga = sagaMiddleware.run;
   store.asyncReducers = {}; // Async reducer registry
-  store.replaceEpic = epicMiddleware.replaceEpic;
   // Make reducers hot reloadable, see http://mxs.is/googmo
   /* istanbul ignore next */
   if (module.hot) {

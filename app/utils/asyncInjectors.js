@@ -7,7 +7,6 @@ import invariant from 'invariant';
 import warning from 'warning';
 
 import createReducer from '../reducers';
-import createRootEpic from '../epics';
 /**
  * Validate the shape of redux store
  */
@@ -19,7 +18,6 @@ export function checkStore(store) {
     replaceReducer: isFunction,
     runSaga: isFunction,
     asyncReducers: isObject,
-    replaceEpic: isFunction,
   };
   invariant(
     conformsTo(store, shape),
@@ -68,27 +66,6 @@ export function injectAsyncSagas(store, isValid) {
 }
 
 /**
- * Inject an asynchronously loaded epic
- */
-export function injectAsyncEpics(store, isValid) {
-  return function injectEpics(epics) {
-    if (!isValid) checkStore(store);
-
-    invariant(
-      Array.isArray(epics),
-      '(app/utils...) injectAsyncEpics: Expected `epics` to be an array of generator functions'
-    );
-
-    warning(
-      !isEmpty(epics),
-      '(app/utils...) injectAsyncEpics: Received an empty `sagas` array'
-    );
-
-    store.replaceEpic(createRootEpic(epics));
-  };
-}
-
-/**
  * Helper for creating injectors
  */
 export function getAsyncInjectors(store) {
@@ -97,6 +74,5 @@ export function getAsyncInjectors(store) {
   return {
     injectReducer: injectAsyncReducer(store, true),
     injectSagas: injectAsyncSagas(store, true),
-    injectEpics: injectAsyncEpics(store, true),
   };
 }

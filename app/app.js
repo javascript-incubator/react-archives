@@ -7,7 +7,6 @@
 
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
-import 'rxjs';
 // Import all the third party stuff
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -43,7 +42,6 @@ import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
 import './global-styles';
-import '../node_modules/semantic-ui-css/semantic.css';
 import '../node_modules/grommet/grommet-aruba.min.css';
 // Import routes
 import createRoutes from './routes';

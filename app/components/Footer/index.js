@@ -1,16 +1,18 @@
 import React from 'react';
 import Footer from 'grommet/components/Footer';
-import Title from 'grommet/components/Title';
 import Box from 'grommet/components/Box';
 import Paragraph from 'grommet/components/Paragraph';
+import LittleNasaIcon from './nasacredits';
+import Heading from 'grommet/components/Heading';
 
 function AppFooter() {
   return (
     <Box pad="medium" colorIndex="grey-1-a" full="horizontal">
-      <Footer justify="between">
-        <Title>
-          Curiosity
-        </Title>
+      <Footer justify="between" align="center">
+        <Heading tag="h3">
+          Curiosity.
+          Powered by {<LittleNasaIcon />}
+        </Heading>
         <Box
           direction="row"
           align="center"
