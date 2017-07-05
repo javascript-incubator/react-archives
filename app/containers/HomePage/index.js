@@ -8,8 +8,10 @@ import Columns from 'grommet/components/Columns';
 import Heading from 'grommet/components/Heading';
 import Card from 'grommet/components/Card';
 import Value from 'grommet/components/Value';
+import Pager from 'react-pager';
 import { ChasingDots } from 'better-react-spinkit';
-import { ResponsiveContainer, LineChart, Line, Tooltip } from 'recharts';
+import { LineChart, Line, Tooltip } from 'recharts';
+import styled from 'styled-components';
 import CamSelect from '../../components/CamSelect';
 import { imagesSelector, loadingImagesSelector, loadImageErrorSelector, loadImageSuccessSelector, globalGenericSelector } from '../App/selectors';
 import { cameraSelector, pageSelector, solSelector } from './selectors';
@@ -31,6 +33,13 @@ const Cameras = [
   'MINITES',
 ];
 
+const ScrollDiv = styled.div `
+  width: 90vw;
+  overflow-x: scroll;
+  margin: 0px auto;
+`;
+
+
 export class HomePage extends Component { // eslint-disable-line react/prefer-stateless-function
   /**
    * when initial state username is not null, submit the form to load repos
@@ -41,10 +50,9 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
   }
 
   render() {
-    const { imageLoading, imageError, images, camera, sol, selectSol, manifestLoading, manifestError, missionManifest, maxPhotos } = this.props; //eslint-disable-line
-
+    const { imageLoading, imageError, images, camera, sol, selectSol, manifestLoading, manifestError, missionManifest, maxPhotos, selectPage, page, totalPhotos } = this.props; //eslint-disable-line
     return (
-      <Box pad="medium" colorIndex="grey-1-a" full="horizontal">
+      <Box pad="medium" colorIndex="grey-1" full="horizontal">
         <Box pad="medium" alignSelf="center" full="horizontal" align="stretch">
           <Value
             align="end"
@@ -57,12 +65,12 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
               <ChasingDots size={70} color="#297373" />
               <Heading>Loading Manifest</Heading>
             </Box>}
-          {!manifestLoading && !!missionManifest.length && <ResponsiveContainer width="100%" height={200}>
-            <LineChart data={missionManifest} onClick={(d) => selectSol(d.activeTooltipIndex)}>
-              <Tooltip itemStyle={{ color: '#000000' }} labelStyle={{ color: '#000000' }} wrapperStyle={{ color: '#000000' }} />
-              <Line type="basis" dataKey="photos" stroke="#0a64a0" dot={false} />
+          {!manifestLoading && !!missionManifest.length && <ScrollDiv>
+            <LineChart data={missionManifest} onClick={(d) => selectSol(d.activePayload[0].payload.sol)} width={5000} height={300}>
+              <Tooltip itemStyle={{ color: '#000000' }} labelStyle={{ color: '#000000' }} wrapperStyle={{ color: '#000000' }} labelFormatter={(e) => `Sol ${missionManifest[e].sol}`} />
+              <Line type="basis" dataKey="photos" stroke="#2ad2c9" dot={false} strokeWidth="2" />
             </LineChart>
-          </ResponsiveContainer>}
+          </ScrollDiv>}
         </Box>
         <Box pad="medium" justify="center" alignSelf="center">
           <CamSelect badges={Cameras} onSelect={(y) => this.props.selectCamera(y)} selected={camera} />
@@ -70,11 +78,15 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
         {imageLoading &&
           <Box pad="medium" justify="center" alignSelf="center" full align="center">
             <ChasingDots size={70} color="#297373" />
-            <Heading tag="h2">Loading Images</Heading>
+            <Heading tag="h3">Loading Images</Heading>
           </Box>}
-        {!images.length &&
+        {!imageLoading && !images.length &&
           <Box pad="medium" justify="center" alignSelf="center" full align="center">
-            <Heading>☹️ No Images Found try different Search</Heading>
+            <Heading tag="h2">☹️ No Images Found try different Search</Heading>
+          </Box>}
+        {imageError && !!images.length &&
+          <Box pad="medium" justify="center" alignSelf="center" full align="center">
+            <Heading tag="h2">😅 Looks like we messed up</Heading>
           </Box>}
         {!imageLoading && !imageError && !!images.length &&
           <Columns
@@ -86,7 +98,7 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
               <Card
                 key={i}
                 textSize="small"
-                colorIndex="grey-1"
+                colorIndex="neutral-1"
                 margin="small"
                 contentPad="medium"
                 direction="column"
@@ -96,6 +108,16 @@ export class HomePage extends Component { // eslint-disable-line react/prefer-st
               />
             )}
           </Columns>}
+        <Box justify="center" align="center" pad="medium">
+          <Pager
+            total={totalPhotos / 25}
+            current={page - 1}
+            visiblePages={5}
+            titles={{ first: 'First', last: 'Last' }}
+            className="pager"
+            onPageChanged={(k) => selectPage(k + 1)}
+          />
+        </Box>
       </Box>
     );
   }
@@ -145,6 +167,7 @@ const mapStateToProps = createStructuredSelector({
   camera: cameraSelector(),
   page: pageSelector(),
   sol: solSelector(),
+  totalPhotos: globalGenericSelector('totalPhotosForCurrentSol'),
 });
 
 // Wrap the component to inject dispatch and state into it

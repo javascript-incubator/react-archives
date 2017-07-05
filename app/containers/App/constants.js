@@ -15,4 +15,5 @@ export const LOAD_IMAGES_ERROR = 'curiosity/global/LOAD_IMAGES_ERROR';
 export const LOAD_MANIFEST = 'curiosity/global/LOAD_MANIFEST';
 export const LOAD_MANIFEST_SUCCESS = 'curiosity/global/LOAD_MANIFEST_SUCCESS';
 export const LOAD_MANIFEST_ERROR = 'curiosity/global/LOAD_MANIFEST_ERROR';
+export const SET_TOTAL_PHOTOS = 'curiosity/global/SET_TOTAL_PHOTOS';
 export const DEFAULT_LOCALE = 'en';

@@ -43,7 +43,7 @@ class BadgeSelect extends Component {
     return (
       <div>
         {this.props.badges.map((y, j) =>
-          <PaddedLabel key={j} onClick={() => this.selectBadge(y)} color={this.props.selected === y ? '#2185D0' : 'grey'}>
+          <PaddedLabel key={j} onClick={() => this.selectBadge(y)} color={this.props.selected === y ? '#35d4cc' : 'grey'}>
             {y}
           </PaddedLabel>
         )}

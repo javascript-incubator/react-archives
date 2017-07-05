@@ -42,7 +42,7 @@ import { translationMessages } from './i18n';
 
 // Import CSS reset and Global Styles
 import './global-styles';
-import '../node_modules/grommet/grommet-aruba.min.css';
+import '../node_modules/grommet/grommet-hpe.min.css';
 // Import routes
 import createRoutes from './routes';
 

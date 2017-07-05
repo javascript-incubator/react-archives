@@ -8,6 +8,7 @@ import {
   LOAD_MANIFEST,
   LOAD_MANIFEST_ERROR,
   LOAD_MANIFEST_SUCCESS,
+  SET_TOTAL_PHOTOS,
 } from './constants';
 
 // The initial state of the App
@@ -21,6 +22,7 @@ const initialState = fromJS({
   loadingManifestSuccess: false,
   missionManifest: [],
   maxPhotos: 0,
+  totalPhotosForCurrentSol: 0,
 });
 
 function appReducer(state = initialState, action) {
@@ -37,6 +39,8 @@ function appReducer(state = initialState, action) {
       return state.set('loadingManifestSuccess', true).set('loadingManifest', false).set('missionManifest', action.manifest).set('maxPhotos', Math.max(...action.manifest));
     case LOAD_MANIFEST_ERROR:
       return state.set('loadingManifestError', true).set('loadingManifest', false);
+    case SET_TOTAL_PHOTOS:
+      return state.set('totalPhotosForCurrentSol', state.get('missionManifest')[action.sol].photos);
     default:
       return state;
   }

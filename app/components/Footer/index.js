@@ -7,7 +7,7 @@ import LittleNasaIcon from './nasacredits';
 
 function AppFooter() {
   return (
-    <Box pad="medium" colorIndex="grey-1-a" full="horizontal">
+    <Box pad="medium" colorIndex="grey-1" full="horizontal">
       <Footer justify="between" align="center">
         <Heading tag="h3">
           Curiosity.

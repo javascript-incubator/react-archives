@@ -1,4 +1,4 @@
-import { LOAD_IMAGES, LOAD_IMAGES_SUCCESS, LOAD_IMAGES_ERROR, LOAD_MANIFEST, LOAD_MANIFEST_SUCCESS, LOAD_MANIFEST_ERROR } from './constants';
+import { LOAD_IMAGES, LOAD_IMAGES_SUCCESS, LOAD_IMAGES_ERROR, LOAD_MANIFEST, LOAD_MANIFEST_SUCCESS, LOAD_MANIFEST_ERROR, SET_TOTAL_PHOTOS } from './constants';
 
 
 export function loadImages() {
@@ -31,6 +31,13 @@ export function imageLoadingSuccess(images) {
   return {
     type: LOAD_IMAGES_SUCCESS,
     images,
+  };
+}
+
+export function setTotalPhotosForCurrentSol(sol) {
+  return {
+    type: SET_TOTAL_PHOTOS,
+    sol,
   };
 }
 

@@ -17,7 +17,7 @@ import { CHANGE_CAMERA, CHANGE_SOL, CHANGE_PAGE } from './constants';
 const initialState = fromJS({
   camera: 'ALL CAMS',
   page: 1,
-  sol: 1,
+  sol: 1000,
 });
 
 function homeReducer(state = initialState, action) {
