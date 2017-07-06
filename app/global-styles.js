@@ -15,8 +15,6 @@ injectGlobal `
     font-size: 24px !important;
     line-height: 24px;
     font-weight: bold;
-    ${'' /* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */}
 
     li{
       list-style-type: none;
