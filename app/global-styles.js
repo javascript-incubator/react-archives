@@ -1,4 +1,13 @@
-import { injectGlobal } from 'styled-components';
+import { injectGlobal, keyframes } from 'styled-components';
+
+const twinkletwinkle = keyframes`
+  from {
+    background-position: 0 0
+  }
+  to {
+    background-position: -10000px 5000px
+  }
+`;
 
 /* eslint no-unused-expressions: 0 */
 injectGlobal `
@@ -38,5 +47,31 @@ injectGlobal `
         color: #fff !important;
       }
     }
+  }
+
+  .stars {
+    background: #14121b url(https://githubuniverse.com/assets/img/universe/stars.png) repeat top center;
+    z-index: 0;
+  }
+
+  .twinkling {
+    background: transparent url(https://githubuniverse.com/assets/img/universe/twinkle.png) repeat top center;
+    z-index: 1;
+    -moz-animation: ${twinkletwinkle} 400s linear infinite;
+    -ms-animation: ${twinkletwinkle} 400s linear infinite;
+    -o-animation: ${twinkletwinkle} 400s linear infinite;
+    -webkit-animation: ${twinkletwinkle} 400s linear infinite;
+    animation: ${twinkletwinkle} 400s linear infinite;
+  }
+
+  .stars, .twinkling {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 `;
