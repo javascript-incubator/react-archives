@@ -36,6 +36,26 @@ export default function createRoutes(store) {
 
       importModules.catch(errorLoading);
     },
+  },{
+    path: '/missioncontrol',
+    name: 'missioncontrol',
+    getComponent(nextState, cb) {
+      const importModules = Promise.all([
+        import('containers/MissionControl/reducer'),
+        import('containers/MissionControl/sagas'),
+        import('containers/MissionControl'),
+      ]);
+
+      const renderRoute = loadModule(cb);
+
+      importModules.then(([reducer, sagas, component]) => {
+        injectReducer('missioncontrol', reducer.default);
+        injectSagas(sagas.default);
+        renderRoute(component);
+      });
+
+      importModules.catch(errorLoading);
+    },
   }, {
     path: '*',
     name: 'notfound',

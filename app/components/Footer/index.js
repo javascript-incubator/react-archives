@@ -1,29 +1,31 @@
 import React from 'react';
-import Footer from 'grommet/components/Footer';
-import Box from 'grommet/components/Box';
-import Heading from 'grommet/components/Heading';
-import Paragraph from 'grommet/components/Paragraph';
 import LittleNasaIcon from './nasacredits';
+import styled from 'styled-components';
+
+const FullBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  z-index: 2;
+  padding: 20px;
+  align-self: stretch;
+`;
+
+const NasaCredits = styled.span`
+  color: #fcfcfc;
+  font-size: 24px;
+`;
 
 function AppFooter() {
   return (
-    <Box pad="medium" colorIndex="grey-1" full="horizontal">
-      <Footer justify="between" align="center">
-        <Heading tag="h3">
-          Curiosity.
-          Powered by {<LittleNasaIcon />}
-        </Heading>
-        <Box
-          direction="row"
-          align="center"
-          pad={{ between: 'medium' }}
-        >
-          <Paragraph margin="none">
-            Made with ♥️ and λ
-          </Paragraph>
-        </Box>
-      </Footer>
-    </Box>
+    <FullBox>
+      <NasaCredits>
+        Powered by {<LittleNasaIcon />}
+      </NasaCredits>
+      <NasaCredits>
+        Made with 💖
+      </NasaCredits>
+    </FullBox>
   );
 }
 

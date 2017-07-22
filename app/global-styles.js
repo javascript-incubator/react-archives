@@ -9,6 +9,12 @@ const twinkletwinkle = keyframes`
   }
 `;
 
+const float = keyframes`
+  50% {
+     transform: translate(0, 10px)
+  }
+`;
+
 /* eslint no-unused-expressions: 0 */
 injectGlobal `
   html,
@@ -18,6 +24,17 @@ injectGlobal `
     background: black;
   }
 
+  body{
+    font-family: 'Play', sans-serif !important;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .title{
+
+  }
 
   .pager{
     margin: 0px !important;
@@ -64,8 +81,15 @@ injectGlobal `
     animation: ${twinkletwinkle} 400s linear infinite;
   }
 
+  .float-animation {
+    animation-name: ${float};
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
   .stars, .twinkling {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;

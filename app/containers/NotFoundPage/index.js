@@ -6,15 +6,12 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import Heading from 'grommet/components/Heading';
 import messages from './messages';
 
 export default function NotFound() {
   return (
     <article>
-      <Heading>
-        <FormattedMessage {...messages.header} />
-      </Heading>
+      <FormattedMessage {...messages.header} />
     </article>
   );
 }
