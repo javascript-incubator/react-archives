@@ -1,6 +1,6 @@
 import React from 'react';
-import LittleNasaIcon from './nasacredits';
 import styled from 'styled-components';
+import LittleNasaIcon from './nasacredits';
 
 const FullBox = styled.div`
   display: flex;

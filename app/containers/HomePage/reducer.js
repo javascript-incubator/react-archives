@@ -11,7 +11,6 @@
  */
 import { fromJS } from 'immutable';
 
-import { CHANGE_CAMERA, CHANGE_SOL, CHANGE_PAGE } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({

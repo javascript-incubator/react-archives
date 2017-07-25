@@ -25,18 +25,14 @@ injectGlobal `
   }
 
   body{
-    font-family: 'Play', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
   }
 
   img {
     max-width: 100%;
   }
 
-  .title{
-
-  }
-
-  .pager{
+  .pager {
     margin: 0px !important;
     font-size: 24px !important;
     line-height: 24px;

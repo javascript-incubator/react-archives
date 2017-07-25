@@ -120,12 +120,6 @@ export class MissionControl extends Component { // eslint-disable-line react/pre
 
   render() {
     const { imageLoading, imageError, images, camera, sol, selectSol, manifestLoading, manifestError, missionManifest, maxPhotos, selectPage, page, totalPhotos } = this.props; //eslint-disable-line
-    const colorBreakPoint = 200;
-    const { min, max } = missionManifest.reduce((result, x) => ({
-    	min: (x.photos < result.min || result.min === 0) ? x.pv : result.min,
-    	max: (x.photos > result.max || result.max === 0) ? x.pv : result.max,
-  	}), { min: 0, max: 0 });
-    const colorBreakPointPercentage = `${(1 - ((colorBreakPoint - min) / (max - min))) * 100}%`;
     return (
       <RBox backgroundColor="#39393A">
         <RBox padding={30}>
@@ -140,8 +134,8 @@ export class MissionControl extends Component { // eslint-disable-line react/pre
               <defs>
                 <linearGradient id="colorUv" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#fa709a" />
-                  <stop offset={"50%"} stopColor="#fa709a" />
-                  <stop offset={"75%"} stopColor="#fee140" />
+                  <stop offset="50%" stopColor="#fa709a" />
+                  <stop offset="75%" stopColor="#fee140" />
                   <stop offset="100%" stopColor="#fee140" />
                 </linearGradient>
               </defs>

@@ -7,7 +7,7 @@ export const FullBox = styled.div`
   justify-content: center;
 `;
 
-export const MainHeading = styled.h1`
+export const MainHeading = styled.p`
   z-index: 2;
   font-size: 36px;
   color: #fcfcfc;
