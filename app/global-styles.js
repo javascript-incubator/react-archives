@@ -25,7 +25,7 @@ injectGlobal `
   }
 
   body{
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Saira', sans-serif !important;
   }
 
   img {
