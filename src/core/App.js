@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import PropTypes from 'prop-types'
 import WesterosAndEssos from '../map/container'
 import { IndraProvider } from 'indra'
+import Header from '../components/header'
 
 class App extends React.Component {
   static propTypes = {
@@ -19,6 +20,7 @@ class App extends React.Component {
       <Provider store={this.props.store}>
         <IndraProvider indraStore={this.props.indraStore}>
           <div style={{ width: '100vw', height: '100vh' }}>
+            <Header />
             <WesterosAndEssos />
           </div>
         </IndraProvider>

@@ -1,6 +1,6 @@
-# Map of Thrones 👑
+# Totem
 
-Boilerplate for creating Arcgis Web Application 🌏 with React-Redux and Webpack,
+Boilerplate for creating Arcgis Web Application 🌏 with React-Redux and Webpack (_and without Dojo_),
 
 Primed with 💉 Bleeding Edge Mapping and Frontend Techs, like it uses
 
@@ -13,10 +13,9 @@ Primed with 💉 Bleeding Edge Mapping and Frontend Techs, like it uses
 - [Sass](http://sass-lang.com/) this boilerplate supports sass along with css
 - [Eslint](https://eslint.org/) for Linting Javascript, following [Standardjs](https://standardjs.com/) style guide
 
-#### Why the Name?
+#### The Example?
 
-The Demo created uses Map of Westeros as Basemap, Hence the name.
-
+[Map of Thrones: Map of Westeros with Cities and Castles](https://rajatsharma305.github.io/totem/).
 
 #### Atom Setup
 

@@ -1,7 +1,7 @@
 {
-  "name": "shinobi",
+  "name": "totem",
   "version": "2.0.0",
-  "description": "Ninjaic Starter for Redux",
+  "description": "Esri's ArcGIS JS with React-Redux",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",

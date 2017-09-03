@@ -59,7 +59,7 @@ export const LoadMapThunk = mapId => (dispatch, getState, iStore) => {
 
       view.goTo({
         target: proj4(WesterosProjection, WGS84, [-82534.001799999736, 3012168.8979]),
-        zoom: 15
+        zoom: 8
       })
       dispatch(actionSpreader('MAPLOADED'))
     }, (e) => console.log(e))
@@ -68,7 +68,7 @@ export const LoadMapThunk = mapId => (dispatch, getState, iStore) => {
   })
 }
 
-export const AddFeatureLayer = ({ url, marker, popUp, name }) => (dispatch, getState, iStore) => {
+export const AddFeatureLayer = ({ url, marker, popUp, name, size }) => (dispatch, getState, iStore) => {
   esriPromise([
     'esri/layers/FeatureLayer',
     'esri/symbols/PictureMarkerSymbol',
@@ -89,8 +89,8 @@ export const AddFeatureLayer = ({ url, marker, popUp, name }) => (dispatch, getS
       CitiesFeatureLayer.renderer = new SimpleRenderer({
         symbol: new PictureMarkerSymbol({
           url: marker,
-          width: '20px',
-          height: '20px'
+          width: size,
+          height: size
         })
       })
     }
