@@ -1,4 +1,5 @@
 # Totem
+<img src='inspiration.jpg' height='300px' align='right'/>
 
 Boilerplate for creating Arcgis Web Application 🌏 with React-Redux and Webpack (_and without Dojo_),
 
