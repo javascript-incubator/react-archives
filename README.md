@@ -1,9 +1,10 @@
 # Pangaea
-<img src='inspiration.png' height='300px' align='right'/>
 
 Boilerplate for creating Arcgis Web Application 🌏 with React-Redux and Webpack (_and without Dojo_),
 
 Primed with 💉 Bleeding Edge Mapping and Frontend Techs, like it uses
+
+<img src='inspiration.png' height='300px' align='right'/>
 
 - [ESRI's Arcgis API for Javascript v 4.4](https://developers.arcgis.com/javascript/latest/guide/) for Maps(_I know_)
 - [Redux](http://redux.js.org/) as Immutable State Container, _obviously_ with React as View Engine
