@@ -17,7 +17,7 @@ Primed with 💉 Bleeding Edge Mapping and Frontend Techs, like it uses
 
 #### The Example?
 
-[Map of Thrones: Map of Westeros with Cities and Castles](https://rajatsharma305.github.io/totem/).
+[Map of Thrones: Map of Westeros with Cities and Castles](https://rajatsharma305.github.io/pangaea/).
 
 #### Atom Setup
 
