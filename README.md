@@ -38,3 +38,5 @@ git clone --depth=1 https://github.com/rajatsharma305/mapofthrones.git your-proj
 - `npm start or yarn start` to start development server.
 - `npm build` to build project.
 - `npm deploy` to deploy to `gh-pages`.
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
