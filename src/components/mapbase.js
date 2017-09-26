@@ -13,7 +13,7 @@ class MapBase extends Component {
       (child) => React.cloneElement(child, { map: map })
     )
 
-    return <div id='map-root' style={{ width: '100%', height: '100%' }}>
+    return <div id='map-root' style={{ width: '100%', height: '93%' }}>
       {loaded ? childrenWithProps : null}
     </div>
   }
