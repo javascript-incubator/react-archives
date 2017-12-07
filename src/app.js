@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import Chance from 'chance'
 import InitialState from './initialstate'
 import { AppContainer, AppBody } from './components/styled'
 import Header from './components/header'
@@ -79,7 +80,7 @@ class App extends PureComponent {
   }
 
   getRandomRoute() {
-    fetch('http://setgetgo.com/randomword/get.php').then(res => res.text()).then(text => this.onRouteChange(text))
+    this.onRouteChange((new Chance()).word().replace(' ','-'))
   }
 
   setNotification(message, failure) {
