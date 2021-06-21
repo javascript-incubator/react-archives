@@ -1,0 +1,28 @@
+{
+  "name": "lambdamorpher",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "gh-pages": "^0.12.0",
+    "react-scripts": "^0.9.0"
+  },
+  "dependencies": {
+    "babel-standalone": "^6.23.1",
+    "brace": "^0.10.0",
+    "cxs": "^3.0.4",
+    "lambdalebab": "^0.1.0",
+    "react": "^15.4.2",
+    "react-ace": "^4.1.6",
+    "react-dom": "^15.4.2",
+    "semantic-ui-react": "^0.67.0"
+  },
+  "homepage": "https://rajatsharma305.github.io/lambdamorpher",
+  "scripts": {
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
