@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Ranga');
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  justify-content: center;
+}
+
+.jiff-container {
+  margin: 30px;
+
+  .jiff-logo {
+    font-family: 'Ranga', cursive;
+    font-size: 40px !important;
+  }
+
+  .jiff-search {
+    margin: 30px;
+    transition: all 1s ease-in-out;
+  }
+
+  .jiff-result {
+    margin: 30px;
+  }
+}
+
+.xchange-container {
+  margin: 30px;
+
+  .xchange-logo {
+    font-family: 'Bungee Shade', cursive;
+  }
+
+  .xchange-base-setting {
+    margin: 30px;
+    transition: all 1s ease-in-out;
+  }
+
+  .xchange-data.ui.four.statistics {
+    margin: 30px;
+  }
+}
