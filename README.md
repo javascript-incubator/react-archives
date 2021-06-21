@@ -9,4 +9,5 @@
 - [Pure React](/pure-react/README.md)
 - [Watch The Thrones (React)](/watchthethrones-react/README.md)
 - [Pangaea](/pangaea/README.md)
+- [Faker](/faker/README.md)
 
