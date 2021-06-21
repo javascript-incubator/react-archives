@@ -8,3 +8,5 @@
 - [Lamda Reactor](/lamda-reactor/README.md)
 - [Pure React](/pure-react/README.md)
 - [Watch The Thrones (React)](/watchthethrones-react/README.md)
+- [Pangaea](/pangaea/README.md)
+

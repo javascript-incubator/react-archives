@@ -1,0 +1,25 @@
+.header{
+  display: flex;
+  padding: 20px;
+  background: black;
+  color: #fcfcfc;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .main-text{
+    font-size: 20px;
+    letter-spacing: 2.5px;
+    font-family: 'GotFont', serif;
+  }
+
+  .poweredby-text{
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-family: 'GotFont', serif;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 1px white dotted;
+    }
+  }
+}
