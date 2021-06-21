@@ -1,4 +1,4 @@
-# react-archives
+# React Archives
 
 > My old experiments with React and Redux
 
